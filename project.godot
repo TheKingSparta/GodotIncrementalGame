@@ -1,0 +1,59 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "HBoxDisplayManager",
+"class": "CurrencyManager",
+"language": "GDScript",
+"path": "res://ProducerScenes/CurrencyManager.gd"
+}, {
+"base": "HBoxContainer",
+"class": "HBoxDisplayManager",
+"language": "GDScript",
+"path": "res://HBoxDisplayManager.gd"
+}, {
+"base": "Panel",
+"class": "Manager",
+"language": "GDScript",
+"path": "res://Manager.gd"
+}, {
+"base": "PanelContainer",
+"class": "Producer",
+"language": "GDScript",
+"path": "res://Producer.gd"
+}, {
+"base": "HBoxContainer",
+"class": "ProducerDisplayManager",
+"language": "GDScript",
+"path": "res://ProducerDisplayManager.gd"
+} ]
+_global_script_class_icons={
+"CurrencyManager": "",
+"HBoxDisplayManager": "",
+"Manager": "",
+"Producer": "",
+"ProducerDisplayManager": ""
+}
+
+[application]
+
+config/name="IncrementalGame"
+run/main_scene="res://Main.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
+[rendering]
+
+quality/filters/msaa=3
+environment/default_environment="res://default_env.tres"

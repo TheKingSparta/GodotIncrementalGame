@@ -1,0 +1,327 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Manager.gd" type="Script" id=1]
+[ext_resource path="res://ProducerDisplayManager.gd" type="Script" id=3]
+[ext_resource path="res://ProducerScenes/CurrencyManager.gd" type="Script" id=4]
+[ext_resource path="res://FiraCode/FiraCode.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Producer.gd" type="Script" id=6]
+
+[node name="Manager" type="Panel"]
+margin_top = 4.75684
+margin_right = 1024.0
+margin_bottom = 603.757
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrencyBar" type="PanelContainer" parent="."]
+self_modulate = Color( 0, 0.882353, 1, 1 )
+margin_right = 1024.0
+margin_bottom = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrencyManager" type="HBoxContainer" parent="CurrencyBar"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 43.0
+script = ExtResource( 4 )
+
+[node name="MoneyDisplay" type="Label" parent="CurrencyBar/CurrencyManager"]
+margin_right = 503.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0.945098, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Money Display"
+valign = 1
+
+[node name="PrestigePointsDisplay" type="Label" parent="CurrencyBar/CurrencyManager"]
+margin_left = 507.0
+margin_right = 1010.0
+margin_bottom = 36.0
+hint_tooltip = "Next prestige point in: "
+mouse_filter = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Prestige Points Display"
+valign = 1
+
+[node name="ProducerContainer" type="VBoxContainer" parent="."]
+margin_left = 60.0
+margin_top = 80.0
+margin_right = 964.0
+margin_bottom = 540.0
+custom_constants/separation = 30
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Producer1" type="PanelContainer" parent="ProducerContainer"]
+self_modulate = Color( 0, 1, 0.0846155, 1 )
+margin_right = 904.0
+margin_bottom = 133.0
+size_flags_vertical = 3
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProducerDisplayManager" type="HBoxContainer" parent="ProducerContainer/Producer1"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 897.0
+margin_bottom = 126.0
+custom_constants/separation = 50
+alignment = 1
+script = ExtResource( 3 )
+
+[node name="ProducerDisplay" type="Label" parent="ProducerContainer/Producer1/ProducerDisplayManager"]
+margin_right = 138.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Producer"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelDisplay" type="Label" parent="ProducerContainer/Producer1/ProducerDisplayManager"]
+margin_left = 188.0
+margin_right = 326.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Level Display"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmountDisplay" type="Label" parent="ProducerContainer/Producer1/ProducerDisplayManager"]
+margin_left = 376.0
+margin_right = 514.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Amount"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProductionDisplay" type="Label" parent="ProducerContainer/Producer1/ProducerDisplayManager"]
+margin_left = 564.0
+margin_right = 702.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Production"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyButton" type="Button" parent="ProducerContainer/Producer1/ProducerDisplayManager"]
+margin_left = 752.0
+margin_right = 890.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy Button/Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Producer2" type="PanelContainer" parent="ProducerContainer"]
+self_modulate = Color( 0, 1, 0.0846155, 1 )
+margin_top = 163.0
+margin_right = 904.0
+margin_bottom = 296.0
+size_flags_vertical = 3
+script = ExtResource( 6 )
+tier = 2
+costExponent = 3.0
+baseCost = 3
+productionMultiplier = 3.0
+
+[node name="ProducerDisplayManager2" type="HBoxContainer" parent="ProducerContainer/Producer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 897.0
+margin_bottom = 126.0
+custom_constants/separation = 50
+alignment = 1
+script = ExtResource( 3 )
+
+[node name="ProducerDisplay" type="Label" parent="ProducerContainer/Producer2/ProducerDisplayManager2"]
+margin_right = 138.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Producer"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelDisplay" type="Label" parent="ProducerContainer/Producer2/ProducerDisplayManager2"]
+margin_left = 188.0
+margin_right = 326.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Level Display"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmountDisplay" type="Label" parent="ProducerContainer/Producer2/ProducerDisplayManager2"]
+margin_left = 376.0
+margin_right = 514.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Amount"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProductionDisplay" type="Label" parent="ProducerContainer/Producer2/ProducerDisplayManager2"]
+margin_left = 564.0
+margin_right = 702.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Production"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyButton" type="Button" parent="ProducerContainer/Producer2/ProducerDisplayManager2"]
+margin_left = 752.0
+margin_right = 890.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy Button/Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Producer3" type="PanelContainer" parent="ProducerContainer"]
+self_modulate = Color( 0, 1, 0.0846155, 1 )
+margin_top = 326.0
+margin_right = 904.0
+margin_bottom = 460.0
+size_flags_vertical = 3
+script = ExtResource( 6 )
+tier = 3
+costExponent = 4.0
+baseCost = 4
+productionMultiplier = 4.0
+
+[node name="ProducerDisplayManager2" type="HBoxContainer" parent="ProducerContainer/Producer3"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 897.0
+margin_bottom = 127.0
+custom_constants/separation = 50
+alignment = 1
+script = ExtResource( 3 )
+
+[node name="ProducerDisplay" type="Label" parent="ProducerContainer/Producer3/ProducerDisplayManager2"]
+margin_right = 138.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Producer"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelDisplay" type="Label" parent="ProducerContainer/Producer3/ProducerDisplayManager2"]
+margin_left = 188.0
+margin_right = 326.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Level Display"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmountDisplay" type="Label" parent="ProducerContainer/Producer3/ProducerDisplayManager2"]
+margin_left = 376.0
+margin_right = 514.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Amount"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProductionDisplay" type="Label" parent="ProducerContainer/Producer3/ProducerDisplayManager2"]
+margin_left = 564.0
+margin_right = 702.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Production"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BuyButton" type="Button" parent="ProducerContainer/Producer3/ProducerDisplayManager2"]
+margin_left = 752.0
+margin_right = 890.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 20, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy Button/Cost:"
+__meta__ = {
+"_edit_use_anchors_": false
+}

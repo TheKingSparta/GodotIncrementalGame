@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Producer.gd" type="Script" id=1]
+[ext_resource path="res://Test.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 35.0
+margin_bottom = 27.0
+
+[node name="Producer" type="PanelContainer" parent="."]
+margin_right = 14.0
+margin_bottom = 14.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProducerDisplayManager" type="HBoxContainer" parent="Producer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 35.0
+margin_bottom = 27.0
+script = ExtResource( 2 )
+
+[node name="BuyButton" type="Button" parent="Producer/ProducerDisplayManager"]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="ProducerDisplay" type="Label" parent="Producer/ProducerDisplayManager"]
+margin_left = 16.0
+margin_top = 3.0
+margin_right = 16.0
+margin_bottom = 17.0
+
+[node name="LevelDisplay" type="Label" parent="Producer/ProducerDisplayManager"]
+margin_left = 20.0
+margin_top = 3.0
+margin_right = 20.0
+margin_bottom = 17.0
+
+[node name="AmountDisplay" type="Label" parent="Producer/ProducerDisplayManager"]
+margin_left = 24.0
+margin_top = 3.0
+margin_right = 24.0
+margin_bottom = 17.0
+
+[node name="ProductionDisplay" type="Label" parent="Producer/ProducerDisplayManager"]
+margin_left = 28.0
+margin_top = 3.0
+margin_right = 28.0
+margin_bottom = 17.0
